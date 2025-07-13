@@ -1,26 +1,30 @@
-// Scroll animation
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, {
-  threshold: 0.1
-});
+// Animación de scroll
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+  }
+);
 
-document.querySelectorAll("section, .card").forEach(el => {
+document.querySelectorAll(".scroll-hidden").forEach((el) => {
   observer.observe(el);
 });
 
 // Hero parallax
 window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
-  document.getElementById("bg-img").style.transform = `translateY(${scrollY * 0.3}px)`;
-  document.getElementById("fg-img").style.transform = `translateY(${scrollY * 0.6}px)`;
+  document.getElementById("fg-img").style.transform = `translateY(${
+    scrollY * 0.4
+  }px)`;
 });
 
-// Letra animada
+// Letras animadas
 const versos = [
   "Escuchen todos atentos",
   "Lo que les voy a contar",
@@ -28,64 +32,56 @@ const versos = [
   "De un hombre fuerte y cabal",
   "Que en el bonito Guerrero",
   "Ya lo han visto pasar.",
-  "",
   "Tengo la dicha señores",
   "De estar con él buenos ratos",
   "Es buen amigo de todos",
   "Con muchas risas y cantos",
   "Enseguida lo presento",
   "Prepárense buenos tragos.",
-  "",
   "Marco Antonio es su nombre....",
-  "",
   "Molina Galeana es.........",
   "Del bello lugar de Tecpan",
   "Ahí lo vieron crecer",
   "El Chuma allá lo conocen",
   "No se vayan a perder.",
-  "",
   "En Guerrero y Michoacan",
   "Él tiene amigos sinceros",
   "Siempre lo andan cuidando",
   "Como buenos pistoleros",
   "Sesenta también le apodan",
   "Sus compás allá en el juego.",
-  "",
   "Así ya lo reconocen",
   "En las escuelas que triunfa",
   "Su pasión es el fútbol",
   "Pero también su trabajo",
   "Con juegos, cantos y risas",
   "A niños está educando.",
-  "",
   "Le gusta tomar cerveza...",
   "Vino, tequila y mezcal",
   "Pongan la de los Cadetes",
   "Que me quiero emborrachar",
   "Y sígale con las mismas",
   "Yo se las voy a pagar.",
-  "",
   "Cincuenta años de historia",
   "Y sigue la mata dando",
   "Que Dios siempre le permita",
   "Que siga y siga pateando",
   "Y cada fin de semana",
   "Con sus amigos bromeando.",
-  "",
   "Todavía esto no termina",
   "Lo que acabo de contar",
   "El Chuma en Tecpan Galeana",
   "Sesenta acá en Michoacán",
   "No importa cómo le digan",
   "A todos va a respaldar.",
-  "",
   "Aquí ya dejo pagado",
   "Y disfruten todavía",
   "Todas las de los Cadetes",
   "Marco Antonio se reía",
   "Váyanse hasta que las toquen",
-  "Nos vemos ya otro día."
+  "Nos vemos ya otro día.",
 ];
+
 let currentVerse = 0;
 let interval;
 
@@ -124,9 +120,9 @@ function resetVerses() {
 function shareCorrido() {
   if (navigator.share) {
     navigator.share({
-      title: 'El Corrido del Sheshe',
-      text: 'Escucha este corrido impresionante.',
-      url: window.location.href
+      title: "El Corrido del Sheshe",
+      text: "Escucha este corrido impresionante.",
+      url: window.location.href,
     });
   } else {
     alert("Tu navegador no soporta la función de compartir.");
