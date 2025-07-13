@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EL SHESHE - Corrido</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>
+        50 AÑOS DE HISTORIA... <br />
+        Y LA MATA SIGUE DANDO
+      </h1>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="image-layer" id="bg-img"></div>
+      <div class="image-layer" id="fg-img"></div>
+      <h2 class="hero-title">
+        El corrido de: <br />
+        Marco Antonio <br />
+        (El Sheshe)
+      </h2>
+    </section>
+
+    <div class="container">
+      <!-- Cards Section -->
+      <section class="cards">
+        <a href="#" class="card spotify">Spotify</a>
+        <a href="#" class="card youtube">YouTube</a>
+        <a href="#" class="card itunes">iTunes</a>
+      </section>
+
+      <!-- Letra del corrido -->
+      <section class="lyrics">
+        <h2>Letra del Corrido</h2>
+        <div id="versos"></div>
+        <div class="controls">
+          <button onclick="playVerses()" aria-label="Reproducir">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="black"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M8 5v14l11-7L8 5z" />
+            </svg>
+          </button>
+          <button onclick="pauseVerses()" aria-label="Pausar">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="black"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+            </svg>
+          </button>
+          <button onclick="resetVerses()" aria-label="Reiniciar">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="black"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6a6 6 0 01-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+              />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- Compartir -->
+      <section class="share">
+        <h2>¡Comparte el corrido!</h2>
+        <button onclick="shareCorrido()">Compartir</button>
+      </section>
+    </div>
+
+    <!-- Créditos -->
+    <footer class="credits">
+      <p><strong>Escrito por:</strong> Julio</p>
+      <p><strong>Grabado en:</strong> Lázaro Cárdenas, Michoacán</p>
+      <p><strong>Página Web Desarrollada Por:</strong> Aldahir M²</p>
+
+      <div class="footer-links">| <a href="#">Instagram</a> |</div>
+
+      <p class="copyright">© 2025 Todos los derechos reservados</p>
+    </footer>
+  </body>
+</html>
