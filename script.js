@@ -128,3 +128,19 @@ function shareCorrido() {
     alert("Tu navegador no soporta la función de compartir.");
   }
 }
+
+// Animacion de carga
+function loadingAnimation() {
+  const loadingDiv = document.getElementById("loading");
+  loadingDiv.style.display = "flex";
+
+  // Simular carga
+  setTimeout(() => {
+    loadingDiv.style.display = "none";
+  }, 7500);
+}
+
+// Ejecutar cuando el DOM esté listo
+document.addEventListener("DOMContentLoaded", function () {
+  loadingAnimation();
+});
