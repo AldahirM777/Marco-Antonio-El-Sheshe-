@@ -120,7 +120,7 @@ function resetVerses() {
 function shareCorrido() {
   if (navigator.share) {
     navigator.share({
-      title: "El Corrido del Sheshenta",
+      title: "El Corrido de Marco Antonio (El Sheshenta)",
       text: "Escucha esta obra de arte musical.",
       url: window.location.href,
     });
