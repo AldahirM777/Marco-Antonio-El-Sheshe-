@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;600&family=Chakra+Petch:wght@400;600&family=Kanit:wght@400;700&family=Prompt:wght@400;600&family=Rubik:wght@400;600&family=Saira+Semi+Condensed:wght@400;700&display=swap");
 /* Reset básico */
 * {
   margin: 0;
@@ -23,6 +24,7 @@ body {
 .navbar {
   background-color: #1a1a1a;
   padding: 2rem;
+  font-family: "Rubik", sans-serif;
   text-align: center;
   font-weight: bold;
   font-size: 1.5rem;
@@ -40,8 +42,7 @@ body {
   background: radial-gradient(circle, #1b1b1b, #0a0a0a);
   overflow: hidden;
 }
-
-.image-layer {
+.hero .image-layer {
   position: absolute;
   inset: 0;
   background-size: cover;
@@ -49,8 +50,7 @@ body {
   filter: brightness(0.6);
   z-index: 1;
 }
-
-#fg-img {
+.hero #fg-img {
   background-image: url("../imgs/bg.png");
   mix-blend-mode: screen;
   z-index: 2;
@@ -60,11 +60,27 @@ body {
 /* Cards */
 .cards {
   display: flex;
+  align-items: center;
+  flex-direction: column;
   justify-content: center;
   gap: 2rem;
   padding: 2rem;
   margin-top: 50px;
   flex-wrap: wrap;
+}
+.cards h1 {
+  width: 100%;
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+  color: #fff;
+  margin: 1rem 0;
+}
+.cards h2 {
+  width: 100%;
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+  color: #fff;
+  margin: 1rem 0;
 }
 
 .card {
@@ -72,6 +88,7 @@ body {
   overflow: hidden;
   background: linear-gradient(135deg, #1f1c2c, #928dab);
   color: #fff;
+  font-family: "Prompt", sans-serif;
   padding: 1.2rem 2rem;
   border-radius: 1rem;
   font-weight: bold;
@@ -107,24 +124,20 @@ body {
   background-color: rgba(255, 255, 255, 0.02);
   text-align: center;
 }
-
 .lyrics h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #fdfdfd;
 }
-
-#versos {
+.lyrics #versos {
   font-size: 1.3rem;
   line-height: 1.6;
   min-height: 5rem;
   transition: opacity 0.4s ease-in-out;
 }
-
-.verse {
+.lyrics .verse {
   animation: fadeIn 0.6s ease-out;
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -135,11 +148,11 @@ body {
     transform: translateY(0);
   }
 }
+
 /* Controles */
 .controls {
   margin-top: 1rem;
 }
-
 .controls button {
   position: relative;
   overflow: hidden;
@@ -154,9 +167,8 @@ body {
   transition: background-color 0.3s;
   animation: cambioColor 4s ease-in-out infinite;
 }
-
 .controls button:hover {
-  background-color: #ff3e2d;
+  background-color: #f52d1b;
 }
 
 /* Compartir */
@@ -164,12 +176,10 @@ body {
   padding: 2rem;
   text-align: center;
 }
-
 .share h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   font-size: 1.5rem;
 }
-
 .share button {
   background: linear-gradient(to right, #11998e, #38ef7d);
   color: white;
@@ -179,8 +189,12 @@ body {
   border-radius: 1rem;
   cursor: pointer;
   transition: transform 0.2s;
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 30px rgba(56, 239, 125, 0.5);
 }
-
+.share button:active {
+  transform: scale(0.9);
+}
 .share button:hover {
   transform: scale(1.1);
 }
@@ -192,24 +206,30 @@ footer {
   align-items: center;
   flex-direction: column;
   background-color: #111;
-}
-
-.credits {
+  margin-top: 5rem;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
   color: #aaa;
 }
-
-.credits a {
+footer a {
   background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
+  -webkit-text-emphasis-color: transparent;
+          text-emphasis-color: transparent;
 }
 
 /* Animaciones */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
 @keyframes brilloCard {
   0% {
     transform: translateX(-100%) rotate(25deg);

@@ -120,8 +120,8 @@ function resetVerses() {
 function shareCorrido() {
   if (navigator.share) {
     navigator.share({
-      title: "El Corrido del Sheshe",
-      text: "Escucha este corrido impresionante.",
+      title: "El Corrido del Sheshenta",
+      text: "Escucha esta obra de arte musical.",
       url: window.location.href,
     });
   } else {
