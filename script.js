@@ -136,7 +136,7 @@ function loadingAnimation() {
   // Simular carga
   setTimeout(() => {
     loadingDiv.style.display = "none";
-  }, 4000);
+  }, 2500);
 }
 
 // Ejecutar cuando el DOM esté listo
